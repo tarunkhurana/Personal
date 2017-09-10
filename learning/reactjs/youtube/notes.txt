@@ -1,0 +1,48 @@
+FLUX
+
+   Components------->Actions----->dispatcher----->stores---->components(again)
+                                                    |
+                                                    |
+                                                    |
+                                                    Constants
+
+Redux
+
+   
+
+Reducers<------- Actions<-----------------------------------------Smart Components
+  |                                                                      +
+  |                                                                Dumb Components
+  |                                                                      |
+  |                              pre-render when store changes           |
+One Store----> Provider Component---------------------------------------->
+
+
+Immutable Js
+
+Object.assign() concat map reduce
+
+Object.assign() is sufficient because the state of a redux app only contains immutable values (JSON).
+
+
+USE ES6 Feature to do immutation
+
+state={...state, name:action.payload}
+
+
+Create multiple reducers 
+
+subscribe- called when something changed in store state
+dispatch - called to execute actions
+
+
+
+Redux Middleware
+Reducers
+Store
+Dispatch
+Subscribe
+
+Redux provides a complete application state and React is just the view layer, so as Redux changes,
+React views are updated.  React.js components can also listen to only the pieces of the
+Redux store that they care about, so no matter how big the store gets, the Reactjs component stays clean and simple.
