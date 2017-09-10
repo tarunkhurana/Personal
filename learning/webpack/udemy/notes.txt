@@ -1,0 +1,140 @@
+what does webpack do?
+
+Before we know webpack let understand first
+D/F server side templating(SST) and Single Page Application
+ SST- Backend server creates an html document and send to the user
+ SPAs- Server creates a bare-bones HTML doc to the user. Javascript runs on
+       a user machine to assemble a full page.
+
+
+SST
+User visits page-->http request on the server-->new html document-->user click link--->new html document
+
+SPAs
+User visits page-->http request on the server-->new html document-->React/Angular boots up, shows a page--->user click link--->React/Angular shows new content
+
+In a SPAs, we are relying on JS code heavily while server side do not relies on JS code heavliy
+Tremendous amount code require to create SPAs. That's why we use webpack and webpack will bundle JS file codes into single JS file.
+
+Problems arise due to heavy use of JS
+1. Tremendous amount of code in a single file which creates problem when we have to update single code base. Searching will not be easy in more lines of code. It takes more time to do work.
+To overcome this, the idea of javascript modules evolves to organising code into smaller files i.e, create seperate folder and its related files that contains some less amount of code. 
+Benefits
+1. Code becomes lot more clear
+2. Get to know easily about location of the project
+	
+Problem arise due to javascript module system( )
+1. Load order (Order in which the code executes)
+2. lots of javascript files loading in browser making of lots of http requests which creates bad performance on mobile devices
+
+The primary purpose of webpack is to take big collection of tiny little js module files into a single file called bundle.js or whatever you like and also take care of the load oreder. 
+
+package.json is used to record any dependencies that project have and will
+also use to create couple of different scripts to build and execute a project
+
+ Module System      Syntax
+1. CommonJS         require/ module.exports
+2. AMD              require/define
+3. ES2015           import/export
+
+CommonJS is implemented by nodeJS
+Asynchonous Module Definition(AMD) is used in front end application where module of codes can be loaded asynchronously
+ES2015 
+
+
+Handling project assets
+
+1. Loaders
+Module loaders are used to do some preprocessing On files before they are added to bundle.js file. Loaders are commonly used to do preprocess transpiling es2015 code/ handle css/images
+  a. babel loader used to transpile es2015 code to javascript which reads by browser.
+    
+    Three modules which helps babel work
+    Module      			Purpose
+// JS
+1.  Babel-Loader          teaches babel how to work with webpack
+2.  Babel-Core            knows how to take in code, parse it and generates some output 						  file
+3.  Babel-Preset-Env      Ruleset for telling babel exactly what pieces of es2015/6/7 							  syntax to look for and how to turn into es5 code.
+4. babel-preset-es2016
+5. babel-preset-es2015
+// CSS
+6. css-loader             knows how to deal with css imports
+7. style-loader           take css imports and adds them to html document
+8. extract-text-webpack-plugin	 It moves every require("style.css") in entry chunks into a separate css output file. So your styles are no longer inlined into the javascript, but separate in a css bundle file (styles.css). If your total stylesheet volume is big, it will be faster because the stylesheet bundle is loaded in parallel to the javascript bundle.
+//Image
+9. image-webpack-loader - compress the image size
+10. url-loader - checks the image size if it is small put it in the bundle file as
+ raw data and if it is big then it will be added in output directory. url-loader emits the
+ url of the file, with output.publicPath prepended to the url
+
+ 11. react - react preset is used for transpiling jsx code into raw javascript
+
+//Code Splitting
+with code splitting, webpack allows you to split bundle.js file into seperate individual files and programatically decides which files/module load. For example,
+if on login page, only login code generate and on ither page show other code.
+
+//vendor asset caching
+our code             vendorcode
+index.js             react.js  
+search_list.js       lodash.js
+                     other...
+
+// asset caching in browser
+If the file is not downloaded before, it will download the file and if it is downloaded before it will not download again cached from local. you have to clear the cookies/ cache in browser to file to download again.                       
+
+
+// increases the performance
+a. code splitting
+b. file caching
+
+commands
+System.import().then(module=>{});
+
+plugins
+
+are like loaders but they are more about looking at total sum of input and total sum of output that is going through webpack
+
+1. CommonsChunkPlugin - get the duplicate code from both the entry points and put it into the file specified in common chunk plugin options
+2. HtmlWebpackPlugin - The purpose of this plugin is to replace the script tags by automating the html file.
+3. webpack.definePlugin - used to define variables on window scope environment
+
+
+Deployment Options
+
+1. static assets
+2. static assets + custom server
+
+ static asset providers      server based providers
+ 1. github                 1. amazon es2 
+ 2. amazon s3              2. amazon ELB  
+ 3. digital ocean          3. digital ocean
+ 4. ms azure               4. heroku
+ 5. surge                  5. ms azure 
+
+ AWS Elastic Beanstalk
+
+ SET \"NODE_ENV=production\" && npm run clean && webpack -p - setting node environment production and webpack in production mode disbles some error checking involved in development mode and remove these out in production mode and even increases the performance by decreasing size of files.
+
+ How node and webpack works together to manage assets?
+
+node_modules
+1. webpack@2.2.0-rc.0 
+2. rimraf
+3. express
+4. webpack-dev-middleware
+
+3. webpack-dev-server - In webpack-dev-server project is serving from memory. used in development mode not for production
+new words
+
+// cunk hashing for cache busting
+// manifest
+
+The purpose of manifest file is to better tell the browser that no change in vendor file.
+
+
+
+
+
+
+
+If you find that webpack is handling css and es2015 features actually they are all benefits from webpack tool
+
