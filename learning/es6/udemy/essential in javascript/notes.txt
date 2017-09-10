@@ -1,0 +1,8 @@
+transpiler - a transpiler reads the code in one language and produces the equivalent code in another.
+
+why do we need transpilers?
+1. browsers currently have support of older JS
+2. Transpilers convert modern javascript code into original js.
+
+Babel
+transpiles es6 code back into es5 which browser support.
