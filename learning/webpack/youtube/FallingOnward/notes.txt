@@ -1,0 +1,78 @@
+Webpack
+
+1. Loaders
+   a. Babel-Loader
+       ES6----------> ES5 Pipleline
+
+                                Test is it a JS file?
+       Babel-------->import ES6----------------------->Babel Loader------------------>Bundle.js
+
+   b. image-loader and url-loader       
+       IMAGE PIPELINE
+               
+                      test:true                compressed img                large
+       Import Image--------------->img-loader------------------->url-loader--------------->load file
+                                                                          |
+                                                                          |   small
+                                                                          | --------------->data url in bundle 
+
+2. Check package.json for dependencies and npm run builds
+
+3. Plugins
+
+
+                   MAIN IDEAS
+
+                   1. Module Bundler
+                   2. Entry
+                   3. Output
+                   4. Loaders
+                   5. Plugins
+
+
+       HOT MODULE REPLACEMENT(HMR)
+       
+       File Changed---->Webpack Compiles----->HMR Server(webpack-dev-server)<--------->HMR Runtime(Bundle)----> Code Updates   
+
+                  MAIN IDEAS
+
+                   1. Webpack-dev-server
+                   2. Live Reload
+                   3. Hot Module Replacement(HMR)
+
+
+
+         DYNAMIC LOADING
+         
+         Somewhere in the bundle we have a button which is clicked and loads some other page   javascript and its files which we need  
+
+
+         VENDOR CACHING
+         
+         APP VS VENDOR  	 	
+
+         APP             VENDOR
+
+         index.js         jquery
+         message.js
+
+         COMMONS CHUNK Plugin
+
+         APP/Bundle   +  Vendor  ======>   APP/Bundle
+          Vendor                             Vendor
+
+
+          BROWSER CACHING
+                                            yes
+            somefile.js------>File Cached?--------->Load from cache
+                                             |No
+                                             |-----> Download it
+
+
+          HTML WEBPACK PLUGIN
+          
+          TREE SHAKING                                   
+
+         
+
+

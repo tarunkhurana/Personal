@@ -1,0 +1,12 @@
+@import "bootstrap/variables.scss";
+html,body{
+    height: 100%;
+    min-height: 100%;
+    background: url("../assets/convertibles.png") no-repeat center center;
+}
+body {
+    background-color: yellow;
+    p {
+        color: $brand-success;
+    }
+}

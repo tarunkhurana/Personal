@@ -1,0 +1,62 @@
+Webpack
+
+--commands
+
+1. npm -g i webpack
+2. npm view webpack versions(show limited versions) if we use --json it shows all the versions
+3.  a. webpack ./src/app.js dist/app.bundle.js run from command line ( For Development Mode)
+    b. webpack ./src/app.js dist/app.bundle.js --p run from command line ( --p For Production Mode i.e, minified file)
+    c. webpack ./src/app.js dist/app.bundle.js --watch run from command line (--watch For watching file)
+
+4. check package.json file running scripts
+
+5. https://webpack.js.org and https://webpack.js.org/guides/migrating/ for further reading
+
+6. html-webpack-plugin - do explore configuration options
+
+7. css-loader
+8. style-loader
+9. sass-loader
+10. extract-text-webpack-plugin
+11. Bebel-loader requires node modules babel, babel-core, babel-preset-es2015 and for react needs babel-preset-react and update babelrc file for react file to work properly
+12. pug pug-loader
+13. Hot Module Replacement 
+    a. extract-text-webpack-plugin not supported during hot module replacement
+14. image-webpack-loader
+15. file-loader for scss/css images. You have to use html loader for html images
+16. file-loader configuration
+17. For fonts use file-loader and url-loader configurations
+18. For bootstrap variables customize uncomment line "bootstrapCustomizations" in .bootstraprc folder
+
+Run webpack without webpack-dev-server with npm commands
+
+{
+    "name": "webpack-starter",
+    "version": "0.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "rimraf dist && webpack -d --watch",
+        "prod": "rimraf dist && webpack -p --watch"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "rimraf": "^2.6.1",
+        "webpack": "^2.6.1"
+    },
+    "devDependencies": {
+        "css-loader": "^0.28.4",
+        "extract-text-webpack-plugin": "^2.1.2",
+        "html-webpack-plugin": "^2.28.0",
+        "node-sass": "^4.5.3",
+        "sass-loader": "^6.0.5",
+        "style-loader": "^0.18.2"
+    }
+}
+
+
+D/w webpack -d and webpack-dev-server
+
+1. First is running from local files and second is reading from memory

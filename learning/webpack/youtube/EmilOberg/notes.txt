@@ -1,0 +1,10 @@
+1. npm install webpack and rimraf --save
+2. npm init creates package.json
+3. package.json
+   scripts
+     build:"rimraf dist/bundle.js webpack src/index.js dist/bundle.js"
+4. mkdir
+5. mv index.js src
+6. rm - you can use rimraf also in place of rm
+7. http-server install globally
+8. http-server -p 3000 in a folder you want to run locally

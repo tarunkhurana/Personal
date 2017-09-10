@@ -1,0 +1,1 @@
+webpackJsonp([0],{11:function(e,o,n){"use strict";Object.defineProperty(o,"__esModule",{value:!0}),n.d(o,"loadFile",function(){return l}),console.log("Hey! I am loading with the help of button!");var l=function(){console.log("load file")}}});
