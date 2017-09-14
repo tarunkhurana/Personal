@@ -6,3 +6,33 @@ why do we need transpilers?
 
 Babel
 transpiles es6 code back into es5 which browser support.
+
+Features
+
+1. new keywords
+2. Template literals in es6 are strings with embedded variables 
+  or code inside. They have surrounding backticks `` with interpolated ${} symbols for variables.
+3. spread operators The spread operator allows an expression to be expanded in places where multiple elements/variables/arguments are expected.The es6 
+   spread operator spreads the contents of an array or object into multiple variables. Its syntax uses three periods, just like so: …
+4   Destructuring Assignment  in es6 allows us to extract data from arrays or objects into separate, distinct variables.
+5 Destructing Array - assigns multiple variables from an array. For instance, let [a, b] = c, where values ‘a’ and ‘b’ assign in order to the respective elements in ‘c’.
+6. Destructiong Objects - assigns multiple variables form an object. For instance, let { a, b } = c, where values ‘a’ and ‘b’ assign to the ‘a’ and ‘b’ properties in ‘c’.
+7. Arrow functions work like normal method expressions in JavaScript, but with a shorter syntax.
+   They also have the added benefit of being anonymous. In addition, unlike normal JavaScript function, they do not bind the this object to their function scope.
+8. Modules in javascript are reusable pieces of code within our application. As our application grows we need to split code into multiple files so that it can be reusable , testable and maintainable.
+  Modules refer to reusable pieces of code that often exist independently in their own separate files.
+
+keywords in es6
+1. let in place of var - let allows you to declare variables that are limited in scope to the block, statement,
+                         or expression on which it is used. This is unlike the var keyword, which defines a variable
+                         'globally, or locally to an entire function regardless of block scope.
+check this link, https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let
+
+2. const - value cannot be re-assigned but we can manipulate it. 
+          for example: arr=[1,2,3] // arr=3+1 throw an error while arr.push(4) is valid.
+3. export - Export in es6 sends functions, objects, or primitive values from one module to another.
+            export the keywords and its values. You can  use export default keyword to give named function of the module .
+            It can be use as a fallback. example: export {add, multiply} // add and multiply are two funtions
+4. import - Import in es6 receives functions, objects, or primitive values from another module.
+
+   The default export represents a fallback or “main” value/function for a module. You cannot write the export default syntax and declare variables on the same line.

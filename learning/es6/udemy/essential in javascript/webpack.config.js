@@ -11,5 +11,10 @@ module.exports = {
             test: /\.js$/,
             exclude: /node_modules/
         }]
+    },
+    devServer:{
+        port:8080,
+        contentBase:'./build',
+        inline:true
     }
 }
