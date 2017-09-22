@@ -36,3 +36,14 @@ check this link, https://developer.mozilla.org/en-US/docs/Web/JavaScript/Referen
 4. import - Import in es6 receives functions, objects, or primitive values from another module.
 
    The default export represents a fallback or “main” value/function for a module. You cannot write the export default syntax and declare variables on the same line.
+
+
+ Node_Modules
+1. babel-core
+2. babel-loader
+3. babel-preset-env
+4. webpack
+5. webpack-dev-server
+6. react-dom
+7. react
+8. babel-preset-react  

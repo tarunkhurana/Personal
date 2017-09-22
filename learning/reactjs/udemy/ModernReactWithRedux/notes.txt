@@ -1,6 +1,6 @@
 React Definition
 
-React is a javascript library that is used to produce html that is shown to the user in browser. When you write ract code, we are creating 
+React is a javascript view library that is used to produce html that is shown to the user in browser. When you write ract code, we are creating 
 individual components or views. We nest multiple components for complex application to make it 
 really simple so that code can be reusable and more readable.
 
