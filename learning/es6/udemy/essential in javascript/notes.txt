@@ -21,6 +21,34 @@ Features
    They also have the added benefit of being anonymous. In addition, unlike normal JavaScript function, they do not bind the this object to their function scope.
 8. Modules in javascript are reusable pieces of code within our application. As our application grows we need to split code into multiple files so that it can be reusable , testable and maintainable.
   Modules refer to reusable pieces of code that often exist independently in their own separate files.
+9. Enhanced Object Properties
+   a: you can remove colon and property value if mapping goes with same value. See Below Example
+   b. you can remove function keyword to make it more enhanced 
+  // EXAMPLE
+     const PRICEPROPERTY="PRICE";
+10. Function default Parameters     
+
+  const calculator=(name,price)=>{
+      return{
+          name,
+          add(n1,n2){
+              return n1+n2;
+          },
+          [PRICEPROPERTY.toLowerCase()]:price
+      }
+  };
+
+11. Class-  Class is a blueprint in which we define propeties and behavious/functions. In OOP, we create multiple objects which talk to each other means splitting larger modules into smaller modules and do communication via certain paradigms. with the help of that we can model real world examples i,e, Anima, Human, Ball, Shoe etc...
+12. Promises - Promises object is used for async operations. Three staes
+    a. Pending
+    b. Fulfilled
+    c. Rejected
+12. Generators- They are simply the functions which can be paused. This allows to write code in asynchronous fashion
+
+why we use?
+
+ ///////////////////////
+
 
 keywords in es6
 1. let in place of var - let allows you to declare variables that are limited in scope to the block, statement,
@@ -36,3 +64,5 @@ check this link, https://developer.mozilla.org/en-US/docs/Web/JavaScript/Referen
 4. import - Import in es6 receives functions, objects, or primitive values from another module.
 
    The default export represents a fallback or “main” value/function for a module. You cannot write the export default syntax and declare variables on the same line.
+5. class
+6. static - Static method calls are made directly on the class and are not callable on instances of the class. Static methods are often used to create utility functions.
