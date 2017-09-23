@@ -1,9 +1,13 @@
 import React,{Component} from "react";
 import superagent from "superagent";
+import actions from "../../actions";
+import {connect} from "react-redux";
+
 class Search extends Component{
     constructor(props){
         super(props);
         this.state={
+            posts:[],
             search:{
                 location:"",
                 query:""
@@ -30,8 +34,15 @@ class Search extends Component{
                 alert(err.message);
                 return;
             }
-            console.log(JSON.stringify(data.body));
+            this.setState({
+                posts:data.body
+            });
        })
+    }
+
+    onSelectPost(post,event){
+        event.preventDefault();
+        this.props.selectPost(post);
     }
 
     render(){
@@ -43,12 +54,36 @@ class Search extends Component{
                         <input type="text" onChange={this.onUpdateFilters.bind(this,"query")} placeholder="Query"/><br/>
                         <input type="text" onChange={this.onUpdateFilters.bind(this,"location")} placeholder="Location"/><br/>
                         <button onClick={this.onSearch.bind(this)}>Search</button>
+                        <hr/>
+                        <h3>Posts</h3>
+                        <ol>
+                           { this.state.posts.map((post)=>{
+                                return <li key={post.id}>
+                                   <a href="" onClick={this.onSelectPost.bind(this,post)}> {post.title}</a>
+                                    </li>
+                            })}
+                        </ol>
                     </div>
                     <div className="col-md-8"></div>
+                    {this.props.post.selectedPost?JSON.stringify(this.props.post.selectedPost):"No Post"}
                 </div>
             </div>
         )
     }
 }
 
-export default Search;
+const stateToProps=(state)=>{
+   return {
+       post:state.post
+   }
+}
+
+const dispatchToProps=(dispatch)=>{
+    console.log(actions)
+    return{
+        selectPost(post){dispatch(actions.selectPost(post))}
+    }
+}
+
+
+export default connect(stateToProps,dispatchToProps)(Search);

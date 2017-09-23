@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux'
 import thunk from 'redux-thunk'
 import { userReducer } from '../reducers'
+import { postReducer } from '../reducers'
 
 var store
 export default {
@@ -8,7 +9,8 @@ export default {
 	configure: (initialState) => { // initialState can be null
 		
 		const reducers = combineReducers({ // insert reducers here
-			user: userReducer
+			user: userReducer,
+			post:postReducer
 		})
 
 		if (initialState){

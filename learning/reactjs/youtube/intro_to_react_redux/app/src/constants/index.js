@@ -1,6 +1,6 @@
 
 export default {
-
+    SELECT_POST:             'SELECT_POST',
 	USERS_RECEIVED: 		'USERS_RECEIVED',
 	USER_CREATED: 			'USER_CREATED',
 	USER_LOGGED_IN: 		'USER_LOGGED_IN',

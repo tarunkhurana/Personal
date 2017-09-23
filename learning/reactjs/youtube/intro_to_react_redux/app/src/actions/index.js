@@ -3,6 +3,13 @@ import { TurboClient } from '../utils'
 
 export default {
 
+	selectPost:(post)=>{
+         return{
+			 type:constants.SELECT_POST,
+			 data:post
+		 }
+	},
+
 	fetchUsers: (params) => {
 		return dispatch => {
 			return dispatch(TurboClient.getRequest('user', params, constants.USERS_RECEIVED))

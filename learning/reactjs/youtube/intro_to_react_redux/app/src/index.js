@@ -7,7 +7,7 @@ import {Search} from "./components/layout";
 
 const app = (
 	<Provider store={store.configure(null)}>
-		<Search/>
+		<Intro/>
 	</Provider>
 )
 
