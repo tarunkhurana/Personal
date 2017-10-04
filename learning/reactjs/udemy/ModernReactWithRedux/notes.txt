@@ -4,11 +4,10 @@ React is a javascript view library that is used to produce html that is shown to
 individual components or views. We nest multiple components for complex application to make it 
 really simple so that code can be reusable and more readable.
 
-Components or views
+//Components or views
+Snippet of code that produces html
 
-Snimppet of code that prodcues html
-
-USE REACT SIMPLE STARTER GITHUB PROJECT FOR REACT PROJECT.
+//USE REACT SIMPLE STARTER GITHUB PROJECT FOR REACT PROJECT.
 
 1. JSX library used in place of core react syntax for creating dom elements
 
@@ -128,7 +127,15 @@ after this component render to the screen
 
 
 //MODULES
-
+youtube-api-search
+babel-loader
+babel-core
+babel-preset-env
+babel-preset-react
+webpack
+webpack-dev-server
+react
+react-dom
 Redux-Promise
 Axios
 react-google-maps
