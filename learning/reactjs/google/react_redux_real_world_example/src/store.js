@@ -1,6 +1,7 @@
 import {createStore,applyMiddleware} from "redux";
 import {createLogger} from "redux-logger";
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
+import { promiseMiddleware, localStorageMiddleware } from './middleware';
 import RootReducer from "./reducers";
 
 // ONE WAY
@@ -21,19 +22,19 @@ import RootReducer from "./reducers";
 let store;
 
 export default{
-    configure:(initialState)=>{
+    configure(initialState){
            
       if(initialState){
-          store=createStore(RootReducer,initialState, applyMiddleware(createLogger()));
+          store=createStore(RootReducer,initialState, applyMiddleware(promiseMiddleware,localStorageMiddleware,createLogger()));
           return store;
       }
 
-      store=createStore(RootReducer,composeWithDevTools(applyMiddleware(createLogger())));
+      store=createStore(RootReducer,composeWithDevTools(applyMiddleware(promiseMiddleware,localStorageMiddleware,createLogger())));
 
       return store;
     },
 
-    currentStore:()=>{
+    currentStore(){
         return store;
     }
 }
