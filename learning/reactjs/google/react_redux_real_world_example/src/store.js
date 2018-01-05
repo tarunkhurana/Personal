@@ -30,6 +30,7 @@ export default{
       }
 
       store=createStore(RootReducer,composeWithDevTools(applyMiddleware(promiseMiddleware,localStorageMiddleware,createLogger())));
+      console.log(store);
 
       return store;
     },
